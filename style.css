@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+--Lineargradient: hwb(249 28% 0%) to hsl(278, 94%, 30%);
+--Red: hsl(0, 100%, 66%);
+
+--White: hsl(0, 0%, 100%);
+--Lightgrayishviolet: hsl(270, 3%, 87%);
+--Darkgrayishviolet: hsl(279, 6%, 55%);
+--Verydarkviolet: hsl(278, 68%, 11%);
+
+}
+/* BODY */
+html,body {height: 100%;}
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+/* --------------*/
+
+/* CONTAINER  LEFT*/
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.container-left {
+    background-image: url('./images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    flex: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-right {
+    flex: 65vw;
+}
+/*----------*/
+
+        /* CARD DESIGN */
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            position: absolute;
+            margin-left: 13vw;
+        }
+
+        .card-credit {
+            width: 22em;
+        }
+
+        .card-wrap {
+            margin-left: 4vw;
+            animation: card-bottom 2s;
+        }
+
+        .card-front {
+            position: absolute;
+            top: 15px;
+            width: 19.4em;
+            padding: 0 1.3em;
+        }
+
+        .front-card {
+            animation: card 2s;
+        }
+
+
+        .card-logo {
+            width: 70px;
+        }
+        .number-card {margin: 50px 0 0 5px;}
+        .name-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cvc-card {
+            position: relative;
+            top: -125px;
+            margin-left: 285px;
+        }
+
+        .card-credit:nth-child(1) {
+            box-shadow: 0 0 10px -2px var(--Verydarkviolet);
+            background-color: transparent;
+            border-radius: 9px;
+        }
+
+        #myName {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /*-------------*/
+
+/* classes */
+.font-biggest {
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.white {
+    color: var(--White);
+}
+
+.font-small {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.font-normal {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.seeYou {
+    z-index: 15;
+}
+
+.darkViolet {
+    color: var(--Verydarkviolet);
+}
+
+::placeholder, ::-webkit-input-placeholder {
+    opacity: 0.3;
+}
+
+.user-select {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* ------------------- */
+
+/* CONTAINER RIGHT */
+
+.container-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+    /*    FORM  */
+    .form {
+        width: 25em;
+        animation: opacity 2s;
+    }
+
+    .form small {
+        font-size: 12px;
+        height: 1px;
+        color: white;
+    }
+    
+    label {
+        display: block;
+    }
+    
+    .full-input {
+        width: 93%;
+        padding: 2% 3%;
+        margin-top: 8px;
+    }
+    
+    .form-date {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 3%;
+    }
+    
+    .form-date-wrap {
+        flex: 50%;
+    }
+    
+    .form-date-exp {
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+    
+    .form-date-exp input {
+        width: 25%;
+        padding: 4% 10%;
+        letter-spacing: 3px;
+        margin-top: 5px;
+    }
+    
+    .cvc {
+        width: 90%;
+        padding: 4%;
+        margin-top: 5px;
+        text-align: center;
+    }
+    
+    input {
+        border: 1px solid var(--Lightgrayishviolet);
+        border-radius: 7px;
+    }
+    /*----------------------*/
+
+        /* BUTTON */
+        .confirm {
+            margin-top: 20px;
+            width: 100%;
+            padding: 3% 0;
+            background-color:var(--Verydarkviolet);
+            border: 0;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        input:focus {
+            outline: none;
+        }
+        /*-------------*/
+    
+    /* Thank You Message */
+    .thankYou {
+        width: 25em;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+    }
+
+    .thankYou img {
+        animation: bounce 1s linear forwards;
+        position: relative;
+    }
+
+    .thankYou h2 {
+        letter-spacing: 4px;
+        background: -webkit-linear-gradient(hwb(249 28% 0%), hsl(278, 94%, 30%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: opacity 2s;
+    }
+
+    .thankYou p {
+        letter-spacing: 1px;
+        opacity: 0.7;
+        animation: showHide 1s ease-in alternate;
+        overflow: hidden;
+        width: 100%;
+        height: 20px;
+    }
+
+    .thankYou button {
+        width: 90%;
+        background-color: var(--Verydarkviolet);
+        color: white;
+        padding: 10px 0;
+        margin-top: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        animation: opacity 2s;
+    }
+
+    .thankYou button:hover , .confirm:hover{
+        background-color: white;
+        outline: 2px solid var(--Verydarkviolet);
+        color: var(--Verydarkviolet);
+    }
+
+    .thankYou button:active {
+        cursor: crosshair;
+        background-color: aqua;
+    }
+
+    
+
+    /*--------------------*/
+/*---------------*/
+    
+/* ANIMATED */
+@keyframes bounce {
+    from {
+        opacity: 0;
+        transform: translateY(-400px);
+}
+
+    to {
+        opacity: 1;
+        transform : translateY(0);
+    }
+}
+
+@keyframes showHide {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes card {
+    from {
+        transform: translate(-200px);
+    }
+    to {
+        transform: translate(0px);
+    }
+}
+@keyframes card-bottom {
+    from {
+        transform: translate(-250px);
+    }
+    to {
+        transform: translate(0px);
+    }
+}
+/*--------------*/
+
+@media screen and (max-width: 1175px) {
+    .container-right {
+        justify-content: right;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1213px) {
+    .form {
+        transform: scale(0.9);
+    }
+
+    .card {
+        margin-left: 15vw;
+    }
+}
+
+@media screen and (max-width: 1093px) {
+    .form {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .card {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .card {
+        margin-left: 1%;
+    }
+    .container-right {
+        justify-content: right;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .card {
+        transform: scale(0.8);
+    }
+    .form {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .form {
+        transform: scale(0.8);
+    }
+
+    .thankYou {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 822px) {
+    .card {
+        margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .container-right {
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .form {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .card {
+        margin-left: -55px;
+        transform: scale(0.7);
+    }
+    .thankYou {
+        transform: scale(0.6);
+    }
+
+    .form {
+        transform: scale(0.6);
+    }
+
+}
+
+@media screen and (max-width: 590px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .container-left {
+        background-size: cover;
+        flex: 35%;
+        align-items: center;
+    }
+    
+    .container-right {
+        flex: 65%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .thankYou {
+        width: 90%;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+        transform: scale(0.9);
+    }
+
+    .form {
+        transform: scale(0.9);
+    }
+
+    .card {
+        flex-direction: column-reverse;
+        align-items: center;
+        top: 80px;
+    }
+
+    .front-card {
+        z-index: 25;
+        animation: card 2s;
+    }
+
+    .card-wrap {
+        padding-left: 110px;
+        top: -110px;
+        position: absolute;
+    }
+
+    html,body {height: 600px;}
+}
+
+@media screen and (max-height: 400px) {
+    html,body {height: 400px;}
+} 

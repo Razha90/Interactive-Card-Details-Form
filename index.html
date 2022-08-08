@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .attribution { font-size: 11px; position: absolute; top: 0; right: 0;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div class="container">
+    <div class="container-left">
+      <div class="card">
+        <div class="front-card">
+          <img src="./images/bg-card-front.png" alt="Front Credit" class="card-credit">
+          <div class="card-front user-select">
+            <img src="./images/card-logo.svg" alt="Logo Card" class="card-logo">
+            <p class="font-biggest white number-card">0000 0000 0000 0000</p>
+            <div class="font-small name-card white seeYou">
+              <p id="myName">JANE APPLESEED</p>
+              <p><span id="mm">00</span> / <span id="yy">00</span></p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card-wrap user-select">
+          <img src="./images/bg-card-back.png" alt="Back credit" class="card-credit">
+          <p class="font-small white cvc-card seeYou">000</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-right">
+      <div class="form">
+        <div>
+          <label for="cardholder" class="font-small darkViolet">CARDHOLDER NAME</label>
+          <input type="text" name="cardholder" onkeypress="return event.charCode >= 97 && event.charCode <= 122 || event.charCode >= 65 &&  event.charCode <= 90 ||  event.charCode == 32 || event.charCode == 39 || event.charCode == 46 || event.charCode == 44 || event.charCode == 96" placeholder="e.g. Jane Appleseed" class="full-input font-normal darkViolet" maxlength="20">
+          <small>-</small>
+        </div>
+        <div style="margin-top: 10px;">
+          <label for="cardnumber" class="font-small darkViolet">CARD NUMBER</label>
+          <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="cardnumber" placeholder="e.g 1234 5678 9123 0000" class="full-input font-normal">
+          <small>-</small>
+        </div>
+        <div class="form-date">
+          <div class="form-date-wrap">
+            <label for="date" class="font-small darkViolet">EXP DATE (MM/YY)</label>
+            <div class="form-date-exp">
+              <input type="text" name="date" placeholder="MM" class="font-normal valueMM" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+              <input type="text" name="date" placeholder="YY" class="font-normal valueYY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
+            <small>-</small>
+          </div>
+          <div class="form-date-wrap">
+            <label for="cvc" class="font-small darkViolet">CVC</label>
+            <input type="text" maxlength="3" placeholder="e.g. 123" class="font-normal cvc" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <small>-</small>
+          </div>
+        </div>
+        <button class="confirm white font-normal" onclick="cache()">Confirm</button>
+      </div>
+      <div class="thankYou darkViolet">
+        <img src="./images/icon-complete.svg" alt="Complete">
+        <h2>THANK YOU!</h2>
+        <p>We've added your card details</p>
+        <button onclick="reset()" class="font-normal">Change Data</button>
+      </div>
+    </div>
+    <div class="attribution" >
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Razha90">Razha Jamsik Syah</a>.
+    </div>
+  </div>
+
+</body>
+<script src="./index.js"></script>
+</html>
